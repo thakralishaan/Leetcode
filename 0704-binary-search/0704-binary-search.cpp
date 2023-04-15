@@ -4,22 +4,21 @@ public:
         int start=0;
         int end= arr.size()-1;
         
-        while(start<=end){
+        while(start<end){
+            int mid= start + (end-start)/2;
             
-            int mid = start +(end-start)/2;
+            if(arr[mid]>=target){
+                
+                end=mid;
+            }
             
-            if(arr[mid]==target){
-                return mid;
-            }
-            if(target>arr[mid]){
-                start=mid+1;
-            }
             else{
-                end=mid-1;
+                
+                start= mid+1;
             }
-            
-            mid= start+(end-start)/2;
         }
-    return -1;
+        if(arr[start]!=target)
+            return -1;
+        return start;
     }
 };
