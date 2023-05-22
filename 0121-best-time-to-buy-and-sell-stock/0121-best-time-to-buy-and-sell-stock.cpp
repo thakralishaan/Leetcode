@@ -7,7 +7,7 @@ public:
         int profit=0;
         int maxP=0;
         
-        while(right<prices.size()){
+        for(;right<prices.size();right++){
             if(prices[left]<prices[right]){
                 profit=prices[right]-prices[left];
                 maxP= max(maxP,profit);
@@ -15,9 +15,7 @@ public:
             else{
                 left=right;
             }
-            right+=1;
         }
-        
         return maxP;
         
     }
