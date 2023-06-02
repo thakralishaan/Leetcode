@@ -2,9 +2,14 @@ class Solution {
 public:
     void sortColors(vector<int>& nums) {
         //First -> use sort function but it is not in place solution with TC -> nlogn and Sc-. 0n
+        
+//         sort(nums.begin(),nums.end());
+        
         //Second -> use counting and spreading method where we intialize all 3 characters then use for and while loop to iterate and get all numbers
         // for second we get TC 0n and SC= 0(1)
-        // 3pointer approach best solution using of 3 pointers low mid and high
+        
+        
+        // Third -> 3 pointer approach best solution using of 3 pointers low mid and high
         
         int low=0; 
         int mid=0;
