@@ -1,15 +1,27 @@
 class Solution {
 public:
     string mergeAlternately(string w1, string w2) {
-        int n = w1.size(), m = w2.size(), i = 0, j = 0;
-        string res = "";
-        while (i < n || j < m) {
-            if (i < n)
+        int i=0;
+        int j=0;
+        int n=w1.size();
+        int m=w2.size();
+        string res="";
+
+            while(i<n && j<m){
                 res.push_back(w1[i++]);
-            if (j < m)
                 res.push_back(w2[j++]);
+                
+                
+            }
+            
+            while(i<n){
+                res.push_back(w1[i++]);      //remaining portion of array if not of same size
+            }
+            while(j<m){
+                res.push_back(w2[j++]);
+            }
+            return res;
         }
-        return res;
-    }
+
     
 };
