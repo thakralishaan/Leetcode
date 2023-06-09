@@ -6,7 +6,9 @@ public:
         
         while(i<j){
             
-            swap(s[i],s[j]);
+            int temp=s[i];
+            s[i]=s[j];
+            s[j]=temp;
             i++;
             j--;
         }
