@@ -1,22 +1,18 @@
+
+#include <vector>
+#include <climits>
+
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
+        int buy = INT_MAX;
+        int sell = 0;
         
-        int left=0;
-        int right=1;
-        int profit=0;
-        int maxP=0;
-        
-        for(;right<prices.size();right++){
-            if(prices[left]<prices[right]){
-                profit=prices[right]-prices[left];
-                maxP= max(maxP,profit);
-            }
-            else{
-                left=right;
-            }
+        for(int i = 0; i < prices.size(); i++){
+            buy = min(buy, prices[i]);
+            sell = max(sell, prices[i] - buy);
         }
-        return maxP;
         
+        return sell;
     }
 };
