@@ -30,3 +30,10 @@ public:
     }
     }
 };
+
+// Brute Force
+// here we replace all elements with -1 which are neighbours to 0 element in row and column such tha again run a for loop to replace -1 with 0 .... helps not remove 1 which are not in same row and col
+    
+// Better Approach
+// create two new arrays for col and row of n and m size , which will store the 0 if present in that row or col...indicating if one 0 is present then the whole col or row has to be changed to 0 
+// make sure only positive numbers are present in matrix"
