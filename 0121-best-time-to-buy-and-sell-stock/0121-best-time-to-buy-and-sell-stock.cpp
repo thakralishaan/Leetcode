@@ -4,15 +4,30 @@
 
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
-        int buy = INT_MAX;
-        int sell = 0;
-        
-        for(int i = 0; i < prices.size(); i++){
-            buy = min(buy, prices[i]);
-            sell = max(sell, prices[i] - buy);
-        }
-        
-        return sell;
+int maxProfit(vector<int> &arr) {
+    int maxPro = 0;
+    int n = arr.size();
+    int minPrice = INT_MAX;
+
+    for (int i = 0; i < arr.size(); i++) {
+        minPrice = min(minPrice, arr[i]);
+        maxPro = max(maxPro, arr[i] - minPrice);
     }
+    
+    return maxPro;
+}
 };
+// int maxProfit(vector<int> &arr) {
+//     int maxPro = 0;
+//     int n = arr.size();
+
+//     for (int i = 0; i < n; i++) {
+//         for (int j = i + 1; j < n; j++) {
+//             if (arr[j] > arr[i]) {
+//             maxPro = max(arr[j] - arr[i], maxPro);
+//             }
+//         }
+//         }
+
+//     return maxPro;
+// }
